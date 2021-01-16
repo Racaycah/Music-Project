@@ -7,8 +7,15 @@
 
 import UIKit
 
+fileprivate enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+}
+
 enum APIRequest {
     case search(artist: String, limit: Int)
+    case albums(artistId: Int, limit: Int)
     
     private var parameters: [URLQueryItem]? {
         switch self {
@@ -19,6 +26,13 @@ enum APIRequest {
                 URLQueryItem(name: "entity", value: "allArtist"),
                 URLQueryItem(name: "attribute", value: "allArtistTerm")
             ]
+        case .albums(artistId: let artistId, limit: let limit):
+            return [
+                URLQueryItem(name: "id", value: "\(artistId)"),
+                URLQueryItem(name: "limit", value: "\(limit)"),
+                URLQueryItem(name: "entity", value: "album"),
+//                URLQueryItem(name: "attribute", value: "albumTerm")
+            ]
         default:
             return nil
         }
@@ -27,6 +41,7 @@ enum APIRequest {
     private var path: String {
         switch self {
         case .search: return "/search"
+        case .albums: return "/lookup"
         default: return ""
         }
     }
@@ -36,15 +51,13 @@ enum APIRequest {
         urlComponents.scheme = "https"
         urlComponents.host = "itunes.apple.com"
         urlComponents.path = self.path
-        urlComponents.queryItems = parameters
+        urlComponents.queryItems = self.parameters
         
         return urlComponents.url
     }
     
     fileprivate var httpMethod: HTTPMethod {
-        switch self {
-        default: return .get
-        }
+        .get
     }
 }
 
@@ -63,7 +76,7 @@ class NetworkManager {
     
     private init() {}
     
-    func request<T: Decodable>(_ requestType: APIRequest, decodingTo: T.Type, completion: @escaping (Result<BaseResponse<T>, RequestError>) -> Void) {
+    func request<T: Decodable>(_ requestType: APIRequest, decodingTo: T.Type, completion: @escaping (Result<T, RequestError>) -> Void) {
         guard let url = requestType.url else { completion(.failure(.cantConstructUrl)); return }
         
         var urlRequest = URLRequest(url: url)
@@ -87,7 +100,7 @@ class NetworkManager {
                 
                 let object = try decoder.decode(BaseResponse<T>.self, from: data)
                 
-                completion(.success(object))
+                completion(.success(object.results))
             } catch let error {
                 print("Error: \(error)")
                 if error is DecodingError {
@@ -100,10 +113,4 @@ class NetworkManager {
         
         task.resume()
     }
-}
-
-fileprivate enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
 }

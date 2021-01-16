@@ -21,6 +21,12 @@ class SearchArtistViewController: UIViewController {
         artistsTableView.delegate = self
         artistsTableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == SegueIdentifiers.artistDetail, let artist = sender as? ArtistSearch, let artistAlbumsVC = segue.destination as? ArtistAlbumsViewController else { return }
+        
+        artistAlbumsVC.artist = artist
+    }
 
 }
 
@@ -45,7 +51,12 @@ extension SearchArtistViewController: UISearchBarDelegate {
 // MARK: - UITableViewDelegate
 
 extension SearchArtistViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let artist = viewModel.artists[indexPath.row]
+        performSegue(withIdentifier: SegueIdentifiers.artistDetail, sender: artist)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -56,7 +67,7 @@ extension SearchArtistViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let artistCell = tableView.dequeueReusableCell(withIdentifier: "ArtistSearchCell")!
+        let artistCell = tableView.dequeueReusableCell(withIdentifier: "ArtistSearchCell", for: indexPath)
         
         let artist = viewModel.artists[indexPath.row]
         

@@ -71,20 +71,53 @@
                     <connections>
                         <outlet property="artistSearchBar" destination="px7-ze-JXw" id="a1F-JU-pd9"/>
                         <outlet property="artistsTableView" destination="xFm-D5-xPo" id="d1w-tb-LQ9"/>
+                        <segue destination="jVu-II-4FI" kind="show" identifier="ArtistDetailSegue" id="fxA-Rt-AKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="88.392857142857139"/>
         </scene>
+        <!--Artist Albums View Controller-->
+        <scene sceneID="6hg-yT-ebJ">
+            <objects>
+                <viewController id="jVu-II-4FI" customClass="ArtistAlbumsViewController" customModule="Music_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6M-Az-kaN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bNY-cP-KPr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bvc-6k-XXc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bvc-6k-XXc" firstAttribute="bottom" secondItem="bNY-cP-KPr" secondAttribute="bottom" id="4wT-3h-Kuv"/>
+                            <constraint firstItem="bNY-cP-KPr" firstAttribute="leading" secondItem="bvc-6k-XXc" secondAttribute="leading" id="dB8-UP-yc8"/>
+                            <constraint firstItem="bNY-cP-KPr" firstAttribute="top" secondItem="bvc-6k-XXc" secondAttribute="top" id="f0F-AA-ErG"/>
+                            <constraint firstItem="bvc-6k-XXc" firstAttribute="trailing" secondItem="bNY-cP-KPr" secondAttribute="trailing" id="xMC-Ml-GiN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lgC-uP-m0w"/>
+                    <connections>
+                        <outlet property="albumsTableView" destination="bNY-cP-KPr" id="Fbb-Hp-Zbb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4O-x6-nXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="88"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NvW-RC-CT6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IuX-3q-XnW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hop-a2-AV7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Hop-a2-AV7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -97,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
