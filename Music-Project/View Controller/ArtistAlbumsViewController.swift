@@ -24,7 +24,12 @@ class ArtistAlbumsViewController: UIViewController {
         albumsTableView.dataSource = self
         
         albumsTableView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "AlbumCell")
+        albumsTableView.register(UINib(nibName: LoadingTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         
+//        loadAlbums()
+    }
+    
+    private func loadAlbums() {
         albumsViewModel.getAlbums(artistId: artist.id) { [unowned self] (albums) in
             DispatchQueue.main.async {
                 self.albumsTableView.reloadData()
@@ -37,7 +42,17 @@ class ArtistAlbumsViewController: UIViewController {
 
 extension ArtistAlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
+        if albumsViewModel.canLoadMore && indexPath.row == albumsViewModel.albums.count {
+            return 44
+        }
+
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if albumsViewModel.canLoadMore && indexPath.row == albumsViewModel.albums.count {
+            loadAlbums()
+        }
     }
 }
 
@@ -45,10 +60,16 @@ extension ArtistAlbumsViewController: UITableViewDelegate {
 
 extension ArtistAlbumsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        albumsViewModel.albums.count
+        albumsViewModel.albums.count + (albumsViewModel.canLoadMore ? 1 : 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if albumsViewModel.canLoadMore && indexPath.row == albumsViewModel.albums.count {
+            let loadingCell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as! LoadingTableViewCell
+            loadingCell.activityIndicator.startAnimating()
+            return loadingCell
+        }
+        
         let albumCell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell", for: indexPath) as! AlbumCell
         
         let album = albumsViewModel.albums[indexPath.row]

@@ -32,6 +32,8 @@
 		7471432425AF7F520026CD79 /* ArtistSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471432225AF7F520026CD79 /* ArtistSearchViewModel.swift */; };
 		74AC823F25B3AA7700F7428A /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC823D25B3AA7700F7428A /* AlbumCell.swift */; };
 		74AC824025B3AA7700F7428A /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74AC823E25B3AA7700F7428A /* AlbumCell.xib */; };
+		74AC824625B3B64F00F7428A /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC824425B3B64F00F7428A /* LoadingTableViewCell.swift */; };
+		74AC824725B3B64F00F7428A /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74AC824525B3B64F00F7428A /* LoadingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		7471432225AF7F520026CD79 /* ArtistSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewModel.swift; sourceTree = "<group>"; };
 		74AC823D25B3AA7700F7428A /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		74AC823E25B3AA7700F7428A /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
+		74AC824425B3B64F00F7428A /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		74AC824525B3B64F00F7428A /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 			children = (
 				74AC823D25B3AA7700F7428A /* AlbumCell.swift */,
 				74AC823E25B3AA7700F7428A /* AlbumCell.xib */,
+				74AC824425B3B64F00F7428A /* LoadingTableViewCell.swift */,
+				74AC824525B3B64F00F7428A /* LoadingTableViewCell.xib */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7435DC0625AF6423008B7F70 /* LaunchScreen.storyboard in Resources */,
+				74AC824725B3B64F00F7428A /* LoadingTableViewCell.xib in Resources */,
 				7435DC0325AF6423008B7F70 /* Assets.xcassets in Resources */,
 				7435DBFE25AF641C008B7F70 /* Main.storyboard in Resources */,
 				74AC824025B3AA7700F7428A /* AlbumCell.xib in Resources */,
@@ -364,6 +371,7 @@
 				74430ABE25B2304B00D83D5F /* AlbumsViewModel.swift in Sources */,
 				7435DC0125AF641C008B7F70 /* Music_Project.xcdatamodeld in Sources */,
 				7435DC3C25AF684C008B7F70 /* NetworkManager.swift in Sources */,
+				74AC824625B3B64F00F7428A /* LoadingTableViewCell.swift in Sources */,
 				7434DFAC25B3329B009D4300 /* UIImageView+AsyncImageLoad.swift in Sources */,
 				7471431425AF78780026CD79 /* BaseResponse.swift in Sources */,
 				7435DBF725AF641C008B7F70 /* AppDelegate.swift in Sources */,

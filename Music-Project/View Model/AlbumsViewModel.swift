@@ -10,23 +10,35 @@ import UIKit
 class AlbumsViewModel {
     var albums = [Album]()
     
-    var canSearchForMore: Bool {
-        albums.isEmpty || albums.count % 20 == 0
-    }
+    var canLoadMore = true
     
     func getAlbums(artistId: Int, completion: @escaping (([Album]) -> Void)) {
-        guard canSearchForMore else { return }
+        guard canLoadMore else { return }
+        
+        if !albums.isEmpty && albums.count % 20 != 0 {
+            canLoadMore = false
+            completion(albums)
+            return
+        }
         
         NetworkManager.shared.request(.albums(artistId: artistId, limit: min(albums.count + 20, 200)), decodingTo: [Album].self) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(var fetchedAlbums):
-                // First result is the artist, remove it
+                // First result is the artist as an Album object with all nil values, remove it
                 fetchedAlbums.removeFirst()
                 
-                self.albums.append(contentsOf: self.albums.isEmpty ? fetchedAlbums : fetchedAlbums.filter { !self.albums.contains($0) })
+                if fetchedAlbums.isEmpty || fetchedAlbums.count == self.albums.count {
+                    self.canLoadMore = false
+                    completion(self.albums)
+                    return
+                }
                 
+                self.canLoadMore = true
+                
+                self.albums.append(contentsOf: self.albums.isEmpty ? fetchedAlbums : fetchedAlbums.filter { !self.albums.contains($0) })
+                print("Albums count: \(self.albums.count)")
                 completion(self.albums)
             case .failure(let error):
                 print("Album fetch error: \(error.localizedDescription)")

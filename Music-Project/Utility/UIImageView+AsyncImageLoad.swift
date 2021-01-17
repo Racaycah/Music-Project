@@ -13,8 +13,6 @@ class AsyncImageView: UIImageView {
     
     func loadImage(from url: URL) {
         image = nil
-        isHidden = false
-        backgroundColor = .systemGroupedBackground
         
         addSpinner()
         
