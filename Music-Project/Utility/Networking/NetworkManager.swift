@@ -16,6 +16,7 @@ fileprivate enum HTTPMethod: String {
 enum APIRequest {
     case search(artist: String, limit: Int)
     case albums(artistId: Int, limit: Int)
+    case tracks(albumId: Int, limit: Int)
     
     private var parameters: [URLQueryItem]? {
         switch self {
@@ -31,7 +32,12 @@ enum APIRequest {
                 URLQueryItem(name: "id", value: "\(artistId)"),
                 URLQueryItem(name: "limit", value: "\(limit)"),
                 URLQueryItem(name: "entity", value: "album"),
-//                URLQueryItem(name: "attribute", value: "albumTerm")
+            ]
+        case .tracks(albumId: let albumId, limit: let limit):
+            return [
+                URLQueryItem(name: "id", value: "\(albumId)"),
+                URLQueryItem(name: "limit", value: "\(limit)"),
+                URLQueryItem(name: "entity", value: "song")
             ]
         default:
             return nil
@@ -41,7 +47,7 @@ enum APIRequest {
     private var path: String {
         switch self {
         case .search: return "/search"
-        case .albums: return "/lookup"
+        case .albums, .tracks: return "/lookup"
         default: return ""
         }
     }

@@ -103,11 +103,50 @@
                     <navigationItem key="navigationItem" id="lgC-uP-m0w"/>
                     <connections>
                         <outlet property="albumsTableView" destination="bNY-cP-KPr" id="Fbb-Hp-Zbb"/>
+                        <segue destination="E6e-yU-YEh" kind="show" identifier="AlbumDetailSegue" id="26I-yz-AoH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4O-x6-nXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1855" y="88"/>
+        </scene>
+        <!--Album Tracks View Controller-->
+        <scene sceneID="qoZ-b9-jAJ">
+            <objects>
+                <viewController id="E6e-yU-YEh" customClass="AlbumTracksViewController" customModule="Music_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="46x-5x-N6M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cpg-qH-eA6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7q6-1N-IDI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QW5-tE-C1M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cpg-qH-eA6" firstAttribute="leading" secondItem="QW5-tE-C1M" secondAttribute="leading" id="VJe-Nl-z1t"/>
+                            <constraint firstItem="cpg-qH-eA6" firstAttribute="top" secondItem="QW5-tE-C1M" secondAttribute="top" id="lKu-3I-WT6"/>
+                            <constraint firstItem="QW5-tE-C1M" firstAttribute="trailing" secondItem="cpg-qH-eA6" secondAttribute="trailing" id="lgS-uJ-jKW"/>
+                            <constraint firstItem="QW5-tE-C1M" firstAttribute="bottom" secondItem="cpg-qH-eA6" secondAttribute="bottom" id="qJi-q5-tSf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XIa-Kj-Cfr"/>
+                    <connections>
+                        <outlet property="tracksCollectionView" destination="cpg-qH-eA6" id="dKc-h6-IAD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1R-Nz-oth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NvW-RC-CT6">

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		7434DFAC25B3329B009D4300 /* UIImageView+AsyncImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434DFAB25B3329B009D4300 /* UIImageView+AsyncImageLoad.swift */; };
 		7434DFB125B3412E009D4300 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434DFB025B3412E009D4300 /* ImageCache.swift */; };
+		7435C23425B498D200E42690 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C23325B498D200E42690 /* Track.swift */; };
+		7435C23925B49AAB00E42690 /* TracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C23825B49AAB00E42690 /* TracksViewModel.swift */; };
+		7435C23E25B49B9300E42690 /* AlbumTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C23D25B49B9300E42690 /* AlbumTracksViewController.swift */; };
+		7435C24525B49C4900E42690 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C24325B49C4900E42690 /* TrackCell.swift */; };
+		7435C24625B49C4900E42690 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7435C24425B49C4900E42690 /* TrackCell.xib */; };
+		7435C24C25B4BF7500E42690 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C24A25B4BF7500E42690 /* LoadingCollectionViewCell.swift */; };
+		7435C24D25B4BF7500E42690 /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7435C24B25B4BF7500E42690 /* LoadingCollectionViewCell.xib */; };
+		7435C25225B4D10200E42690 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C25125B4D10200E42690 /* TrackDetailViewController.swift */; };
 		7435DBF725AF641C008B7F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBF625AF641C008B7F70 /* AppDelegate.swift */; };
 		7435DBF925AF641C008B7F70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBF825AF641C008B7F70 /* SceneDelegate.swift */; };
 		7435DBFB25AF641C008B7F70 /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBFA25AF641C008B7F70 /* SearchArtistViewController.swift */; };
@@ -56,6 +64,14 @@
 /* Begin PBXFileReference section */
 		7434DFAB25B3329B009D4300 /* UIImageView+AsyncImageLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AsyncImageLoad.swift"; sourceTree = "<group>"; };
 		7434DFB025B3412E009D4300 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		7435C23325B498D200E42690 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		7435C23825B49AAB00E42690 /* TracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewModel.swift; sourceTree = "<group>"; };
+		7435C23D25B49B9300E42690 /* AlbumTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTracksViewController.swift; sourceTree = "<group>"; };
+		7435C24325B49C4900E42690 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		7435C24425B49C4900E42690 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		7435C24A25B4BF7500E42690 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		7435C24B25B4BF7500E42690 /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
+		7435C25125B4D10200E42690 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
 		7435DBF325AF641C008B7F70 /* Music-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435DBF625AF641C008B7F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7435DBF825AF641C008B7F70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +126,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7435C24225B49C2900E42690 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7435C24325B49C4900E42690 /* TrackCell.swift */,
+				7435C24425B49C4900E42690 /* TrackCell.xib */,
+				7435C24A25B4BF7500E42690 /* LoadingCollectionViewCell.swift */,
+				7435C24B25B4BF7500E42690 /* LoadingCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
+			sourceTree = "<group>";
+		};
 		7435DBEA25AF641C008B7F70 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +199,8 @@
 			children = (
 				7435DBFA25AF641C008B7F70 /* SearchArtistViewController.swift */,
 				74430AB825B22DF100D83D5F /* ArtistAlbumsViewController.swift */,
+				7435C23D25B49B9300E42690 /* AlbumTracksViewController.swift */,
+				7435C25125B4D10200E42690 /* TrackDetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -181,6 +210,7 @@
 			children = (
 				7471432225AF7F520026CD79 /* ArtistSearchViewModel.swift */,
 				74430ABD25B2304B00D83D5F /* AlbumsViewModel.swift */,
+				7435C23825B49AAB00E42690 /* TracksViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -188,6 +218,7 @@
 		7435DC3725AF6821008B7F70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7435C24225B49C2900E42690 /* Collection View Cells */,
 				74AC823C25B3AA5900F7428A /* Table View Cells */,
 			);
 			path = View;
@@ -199,6 +230,7 @@
 				7471431325AF78780026CD79 /* BaseResponse.swift */,
 				7471431C25AF78E30026CD79 /* ArtistSearch.swift */,
 				74430AC225B231B300D83D5F /* Album.swift */,
+				7435C23325B498D200E42690 /* Track.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -336,9 +368,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7435C24D25B4BF7500E42690 /* LoadingCollectionViewCell.xib in Resources */,
 				7435DC0625AF6423008B7F70 /* LaunchScreen.storyboard in Resources */,
 				74AC824725B3B64F00F7428A /* LoadingTableViewCell.xib in Resources */,
 				7435DC0325AF6423008B7F70 /* Assets.xcassets in Resources */,
+				7435C24625B49C4900E42690 /* TrackCell.xib in Resources */,
 				7435DBFE25AF641C008B7F70 /* Main.storyboard in Resources */,
 				74AC824025B3AA7700F7428A /* AlbumCell.xib in Resources */,
 			);
@@ -370,13 +404,19 @@
 				74AC823F25B3AA7700F7428A /* AlbumCell.swift in Sources */,
 				74430ABE25B2304B00D83D5F /* AlbumsViewModel.swift in Sources */,
 				7435DC0125AF641C008B7F70 /* Music_Project.xcdatamodeld in Sources */,
+				7435C23E25B49B9300E42690 /* AlbumTracksViewController.swift in Sources */,
 				7435DC3C25AF684C008B7F70 /* NetworkManager.swift in Sources */,
 				74AC824625B3B64F00F7428A /* LoadingTableViewCell.swift in Sources */,
 				7434DFAC25B3329B009D4300 /* UIImageView+AsyncImageLoad.swift in Sources */,
+				7435C23925B49AAB00E42690 /* TracksViewModel.swift in Sources */,
+				7435C24C25B4BF7500E42690 /* LoadingCollectionViewCell.swift in Sources */,
 				7471431425AF78780026CD79 /* BaseResponse.swift in Sources */,
 				7435DBF725AF641C008B7F70 /* AppDelegate.swift in Sources */,
+				7435C25225B4D10200E42690 /* TrackDetailViewController.swift in Sources */,
 				74430AB925B22DF100D83D5F /* ArtistAlbumsViewController.swift in Sources */,
 				74430AB425B22BFB00D83D5F /* SegueIdentifiers.swift in Sources */,
+				7435C23425B498D200E42690 /* Track.swift in Sources */,
+				7435C24525B49C4900E42690 /* TrackCell.swift in Sources */,
 				7435DBF925AF641C008B7F70 /* SceneDelegate.swift in Sources */,
 				7471432325AF7F520026CD79 /* ArtistSearchViewModel.swift in Sources */,
 				7434DFB125B3412E009D4300 /* ImageCache.swift in Sources */,

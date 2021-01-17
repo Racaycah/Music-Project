@@ -25,8 +25,6 @@ class ArtistAlbumsViewController: UIViewController {
         
         albumsTableView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "AlbumCell")
         albumsTableView.register(UINib(nibName: LoadingTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
-        
-//        loadAlbums()
     }
     
     private func loadAlbums() {
@@ -35,6 +33,11 @@ class ArtistAlbumsViewController: UIViewController {
                 self.albumsTableView.reloadData()
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let album = sender as? Album, let tracksVC = segue.destination as? AlbumTracksViewController else { return }
+        tracksVC.album = album
     }
 }
 
@@ -53,6 +56,12 @@ extension ArtistAlbumsViewController: UITableViewDelegate {
         if albumsViewModel.canLoadMore && indexPath.row == albumsViewModel.albums.count {
             loadAlbums()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let album = albumsViewModel.albums[indexPath.row]
+        performSegue(withIdentifier: SegueIdentifiers.albumDetail, sender: album)
     }
 }
 

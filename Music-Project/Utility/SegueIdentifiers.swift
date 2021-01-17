@@ -9,4 +9,6 @@ import Foundation
 
 struct SegueIdentifiers {
     static let artistDetail = "ArtistDetailSegue"
+    static let albumDetail = "AlbumDetailSegue"
+    static let trackDetail = "TrackDetailSegue"
 }
