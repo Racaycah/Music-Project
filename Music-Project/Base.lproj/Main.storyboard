@@ -142,11 +142,28 @@
                     <navigationItem key="navigationItem" id="XIa-Kj-Cfr"/>
                     <connections>
                         <outlet property="tracksCollectionView" destination="cpg-qH-eA6" id="dKc-h6-IAD"/>
+                        <segue destination="I3R-dS-UE2" kind="show" identifier="TrackDetailSegue" id="aj4-qT-dsG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1R-Nz-oth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2620" y="88"/>
+        </scene>
+        <!--Track Detail View Controller-->
+        <scene sceneID="RUm-I0-Ied">
+            <objects>
+                <viewController id="I3R-dS-UE2" customClass="TrackDetailViewController" customModule="Music_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1MR-CT-lUo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2eE-lM-L42"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aH3-ub-MXr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhP-oQ-8ZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3387" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NvW-RC-CT6">

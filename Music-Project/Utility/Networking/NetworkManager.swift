@@ -37,18 +37,15 @@ enum APIRequest {
             return [
                 URLQueryItem(name: "id", value: "\(albumId)"),
                 URLQueryItem(name: "limit", value: "\(limit)"),
-                URLQueryItem(name: "entity", value: "song")
+                URLQueryItem(name: "entity", value: "musicVideo")
             ]
-        default:
-            return nil
         }
     }
     
     private var path: String {
         switch self {
         case .search: return "/search"
-        case .albums, .tracks: return "/lookup"
-        default: return ""
+        default: return "/lookup"
         }
     }
     

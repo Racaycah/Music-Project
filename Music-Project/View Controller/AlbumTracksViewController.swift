@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class AlbumTracksViewController: UIViewController {
     
@@ -36,6 +37,11 @@ class AlbumTracksViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let track = sender as? Track, let playerVC = segue.destination as? TrackDetailViewController else { return }
+        playerVC.track = track
+    }
 }
 // MARK: - UICollectionViewDelegateFlowLayout
 
@@ -65,6 +71,12 @@ extension AlbumTracksViewController: UICollectionViewDelegateFlowLayout {
         if tracksViewModel.canLoadMore && indexPath.row == tracksViewModel.tracks.count {
             loadTracks()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let track = tracksViewModel.tracks[indexPath.item]
+        performSegue(withIdentifier: SegueIdentifiers.trackDetail, sender: track)
     }
 }
 

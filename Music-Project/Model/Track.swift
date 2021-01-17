@@ -19,6 +19,7 @@ struct Track: Decodable, Equatable {
     let trackTimeMillis: Double?
     let isStreamable: Bool?
     let previewUrl: URL?
+    let trackViewUrl: URL?
     
     enum CodingKeys: String, CodingKey {
         case id = "trackId"
@@ -32,5 +33,6 @@ struct Track: Decodable, Equatable {
         case trackTimeMillis
         case isStreamable
         case previewUrl
+        case trackViewUrl
     }
 }

@@ -17,6 +17,10 @@
 		7435C24C25B4BF7500E42690 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C24A25B4BF7500E42690 /* LoadingCollectionViewCell.swift */; };
 		7435C24D25B4BF7500E42690 /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7435C24B25B4BF7500E42690 /* LoadingCollectionViewCell.xib */; };
 		7435C25225B4D10200E42690 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C25125B4D10200E42690 /* TrackDetailViewController.swift */; };
+		7435C27525B4EEBE00E42690 /* LikedSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C27325B4EEBE00E42690 /* LikedSong+CoreDataClass.swift */; };
+		7435C27625B4EEBE00E42690 /* LikedSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C27325B4EEBE00E42690 /* LikedSong+CoreDataClass.swift */; };
+		7435C27725B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C27425B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift */; };
+		7435C27825B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C27425B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift */; };
 		7435DBF725AF641C008B7F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBF625AF641C008B7F70 /* AppDelegate.swift */; };
 		7435DBF925AF641C008B7F70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBF825AF641C008B7F70 /* SceneDelegate.swift */; };
 		7435DBFB25AF641C008B7F70 /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435DBFA25AF641C008B7F70 /* SearchArtistViewController.swift */; };
@@ -72,6 +76,8 @@
 		7435C24A25B4BF7500E42690 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		7435C24B25B4BF7500E42690 /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		7435C25125B4D10200E42690 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		7435C27325B4EEBE00E42690 /* LikedSong+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LikedSong+CoreDataClass.swift"; path = "Music-Project/Utility/LikedSong+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7435C27425B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LikedSong+CoreDataProperties.swift"; path = "Music-Project/Utility/LikedSong+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7435DBF325AF641C008B7F70 /* Music-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435DBF625AF641C008B7F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7435DBF825AF641C008B7F70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 		7435DBEA25AF641C008B7F70 = {
 			isa = PBXGroup;
 			children = (
+				7435C27325B4EEBE00E42690 /* LikedSong+CoreDataClass.swift */,
+				7435C27425B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift */,
 				7435DBF525AF641C008B7F70 /* Music-Project */,
 				7435DC0F25AF6423008B7F70 /* Music-ProjectTests */,
 				7435DC1A25AF6423008B7F70 /* Music-ProjectUITests */,
@@ -403,6 +411,7 @@
 				7471431D25AF78E30026CD79 /* ArtistSearch.swift in Sources */,
 				74AC823F25B3AA7700F7428A /* AlbumCell.swift in Sources */,
 				74430ABE25B2304B00D83D5F /* AlbumsViewModel.swift in Sources */,
+				7435C27525B4EEBE00E42690 /* LikedSong+CoreDataClass.swift in Sources */,
 				7435DC0125AF641C008B7F70 /* Music_Project.xcdatamodeld in Sources */,
 				7435C23E25B49B9300E42690 /* AlbumTracksViewController.swift in Sources */,
 				7435DC3C25AF684C008B7F70 /* NetworkManager.swift in Sources */,
@@ -418,6 +427,7 @@
 				7435C23425B498D200E42690 /* Track.swift in Sources */,
 				7435C24525B49C4900E42690 /* TrackCell.swift in Sources */,
 				7435DBF925AF641C008B7F70 /* SceneDelegate.swift in Sources */,
+				7435C27725B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift in Sources */,
 				7471432325AF7F520026CD79 /* ArtistSearchViewModel.swift in Sources */,
 				7434DFB125B3412E009D4300 /* ImageCache.swift in Sources */,
 				74430AC325B231B300D83D5F /* Album.swift in Sources */,
@@ -432,6 +442,8 @@
 				7435DC3D25AF684C008B7F70 /* NetworkManager.swift in Sources */,
 				7471431E25AF78E30026CD79 /* ArtistSearch.swift in Sources */,
 				7435DC1125AF6423008B7F70 /* Music_ProjectTests.swift in Sources */,
+				7435C27825B4EEBE00E42690 /* LikedSong+CoreDataProperties.swift in Sources */,
+				7435C27625B4EEBE00E42690 /* LikedSong+CoreDataClass.swift in Sources */,
 				7471432425AF7F520026CD79 /* ArtistSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

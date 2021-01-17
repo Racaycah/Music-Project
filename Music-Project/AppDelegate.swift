@@ -11,10 +11,19 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        persistentContainer.viewContext.reset()
+        let likedSongsRequest = LikedSong.createFetchRequest()
+        if let likedSongEntity = try? persistentContainer.viewContext.fetch(likedSongsRequest) {
+            if likedSongEntity.isEmpty {
+                let entity = LikedSong(context: persistentContainer.viewContext)
+                entity.ids = Set<Int>()
+                try? persistentContainer.viewContext.save()
+            }
+        }
+        
         return true
     }
 
